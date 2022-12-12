@@ -36,7 +36,12 @@ class DetailActivity : AppCompatActivity() {
         // Retrieve the LETTER from the Intent extras
         // intent.extras.getString returns String? (String or null)
         // so toString() guarantees that the value will be a String
-        val letterId = "A"
+
+        val letterId = if(intent !=null) {
+            intent?.extras?.getString("letter").toString()
+        }else{
+            "A"
+        }
 
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
