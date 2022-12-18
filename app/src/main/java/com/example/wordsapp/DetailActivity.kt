@@ -33,25 +33,5 @@ class DetailActivity : AppCompatActivity() {
         val binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve the LETTER from the Intent extras
-        // intent.extras.getString returns String? (String or null)
-        // so toString() guarantees that the value will be a String
-
-        val letterId = if(intent !=null) {
-            intent?.extras?.getString("letter").toString()
-        }else{
-            "A"
-        }
-
-        val recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = WordAdapter(letterId, this)
-
-        // Adds a [DividerItemDecoration] between items
-        recyclerView.addItemDecoration(
-            DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-        )
-
-        title = getString(R.string.detail_prefix) + " " + letterId
     }
 }
