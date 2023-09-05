@@ -74,12 +74,12 @@ class LetterListFragment : Fragment() {
         _binding = null
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.layout_menu, menu)
+        override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+            inflater.inflate(R.menu.layout_menu, menu)
 
-        val layoutButton = menu.findItem(R.id.action_switch_layout)
-        setIcon(layoutButton)
-    }
+            val layoutButton = menu.findItem(R.id.action_switch_layout)
+            setIcon(layoutButton)
+        }
 
     /**
      * Sets the LayoutManager for the [RecyclerView] based on the desired orientation of the list.
